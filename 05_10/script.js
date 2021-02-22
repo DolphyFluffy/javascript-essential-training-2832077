@@ -52,6 +52,35 @@ const content = `
   
 `;
 
+const nav = `
+  <style>
+  ul {
+    list-style-type: none;
+    margin: 8;
+    padding: 8;
+  }
+
+  li {
+    display: inline;
+    float: left;
+  }
+
+  a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+    color: #000000;
+  }
+</style>
+  <ul>
+    <li><a href="default.asp">Home</a></li>
+    <li><a href="price.asp">Price</a></li>
+    <li><a href="collection.asp">Collection</a></li>
+    <li><a href="about.asp">About</a></li>
+    <li><a href="contact.asp">Contact</a></li>
+  </ul>
+`;
+
 const main = document.querySelector(".maincontent");
 
 const newArticle = document.createElement("article");
@@ -59,4 +88,9 @@ newArticle.classList.add("backpack");
 newArticle.setAttribute("id", "everyday");
 newArticle.innerHTML = content;
 
+const newNav = document.createElement("navigation");
+newNav.classList.add("main-navigation");
+newNav.innerHTML = nav;
+
 main.append(newArticle);
+document.querySelector(".siteheader").append(newNav)
